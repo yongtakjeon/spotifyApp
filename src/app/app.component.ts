@@ -1,12 +1,17 @@
 /*********************************************************************************
-* WEB422 – Assignment 05
-* I declare that this assignment is my own work in accordance with Seneca Academic Policy. No part of this
-* assignment has been copied manually or electronically from any other source (including web sites) or 
-* distributed to other students.
+*  WEB422 – Assignment 06
+*  I declare that this assignment is my own work in accordance with Seneca  Academic Policy.  No part of this
+*  assignment has been copied manually or electronically from any other source (including web sites) or 
+*  distributed to other students.
 * 
-* Name: Yongtak Jun Student ID: 137350195 Date: July/31/2021
+*  Name: Yongtak Jun, Student ID: 137350195, Date: August/12/2021
 *
-********************************************************************************/
+*  Online Link to Music App: https://priceless-murdock-3177db.netlify.app
+*
+*  Online Link to User Api: https://spotify-users-api.herokuapp.com/
+*
+********************************************************************************/ 
+
 
 import { Component, OnInit } from '@angular/core';
 import { Event, NavigationStart, Router } from '@angular/router';

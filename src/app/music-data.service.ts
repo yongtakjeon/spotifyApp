@@ -48,9 +48,9 @@ export class MusicDataService {
     }));
   }
 
-  addToFavourites(id: any): Observable<SpotifyApi.MultipleTracksResponse> {
+  addToFavourites(id): Observable<[String]> {
     // make a PUT request to environment.userAPIBase/favourites/:id to add id to favourites
-    return this.http.put<any>(`${environment.userAPIBase}/favourites/${id}`, `${environment.userAPIBase}/favourites`);
+    return this.http.put<[String]>(`${environment.userAPIBase}/favourites/${id}`, {});
   }
 
   removeFromFavourites(id): Observable<SpotifyApi.MultipleTracksResponse> {
@@ -60,12 +60,12 @@ export class MusicDataService {
         let favouritesListItems = favouritesArray.join();
   
         return this.spotifyToken.getBearerToken().pipe(mergeMap(token => {
-          return this.http.get<any>(`https://api.spotify.com/v1/tracks?ids=${favouritesListItems}`, { headers: { "Authorization": `Bearer ${token}` } });
+          return this.http.get<SpotifyApi.MultipleTracksResponse>(`https://api.spotify.com/v1/tracks?ids=${favouritesListItems}`, { headers: { "Authorization": `Bearer ${token}` } });
         }));
       }
       
       // if the length of the favouritesList array property is less than or equal to 0
-      return new Observable(o=>o.next({tracks: []}));
+      return new Observable<SpotifyApi.MultipleTracksResponse>(o=>o.next({tracks: []}));
 
     }));
   }
@@ -77,12 +77,13 @@ export class MusicDataService {
         let favouritesListItems = favouritesArray.join();
   
         return this.spotifyToken.getBearerToken().pipe(mergeMap(token => {
-          return this.http.get<any>(`https://api.spotify.com/v1/tracks?ids=${favouritesListItems}`, { headers: { "Authorization": `Bearer ${token}` } });
+          return this.http.get<SpotifyApi.MultipleTracksResponse>(`https://api.spotify.com/v1/tracks?ids=${favouritesListItems}`, { headers: { "Authorization": `Bearer ${token}` } });
         }));
       }
       
       // if the length of the favouritesList array property is less than or equal to 0
-      return new Observable(o=>o.next({tracks: []}));
+      return new Observable<SpotifyApi.MultipleTracksResponse>(o=>o.next({tracks: []}));
+      
     }));
   }
 
