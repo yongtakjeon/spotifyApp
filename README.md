@@ -1,27 +1,32 @@
 # Yongtak Music
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.8.
+This application leverages services in Angular to enable the app to fetch real data from the Spotify Web API.
 
-## Development server
+### Live Demo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+https://priceless-murdock-3177db.netlify.app
 
-## Code scaffolding
+- It may take longer to load the first page since its server runs on the Heroku free tier.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Screenshots
 
-## Build
+![Screenshot1](Screenshots/Screenshot1.JPG)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+![Screenshot2](Screenshots/Screenshot2.JPG)
 
-## Running unit tests
+![Screenshot3](Screenshots/Screenshot3.JPG)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Key Features
 
-## Running end-to-end tests
+- This application is designed to be used only if the user logs in. (JWT is used.)
+- When a user clicks on an album cover or artist name, it goes to the corresponding detail page.
+- Users are able to search for an artist to find the album or song they want.
+- Users can save their favourite songs in their "Favourites" list.
+- Users can play small audio snippets if audio samples are available.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Technologies
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- Angular
+- Nodejs (Express)
+- MongoDB
+- Libraries: mongoose, JWT, Bcrypt, dotenv, cors
